@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: black;
+  background: #a3a3a3;
 }
 
 .App-logo {
@@ -57,7 +57,6 @@ section {
   justify-content: center;
   gap: 16px;
 }
-
 .thumb {
   aspect-ratio: 1/1;
   width: 320px;
@@ -69,19 +68,65 @@ section {
   display: grid;
   place-items: center;
 }
-
 .electronics {
   background-image: url('./assets/pexels-esmihel-18311089.png');
 }
-
 .jewelery {
   background-image: url('./assets/pexels-zandatsu-29502933.png');
 }
-
 .men-clothing {
   background-image: url('./assets/arrangement-different-traveling-elements.png');
 }
-
 .women-clothing {
   background-image: url('./assets/pexels-anne-r-168988-4602025.png');
+}
+
+.product-card {
+  width: 240px;
+}
+.product-card img {
+  width: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: #e5e5e5;
+}
+
+.best-sellers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-body {
+  max-width: 576px;
+  margin-inline: auto;
+}
+.footer-brand-wrapper {
+  max-width: 992px;
+  margin-inline: auto;
+  border-top: 1px solid #0a0a0a;
+  padding-block: 40px;
+}
+.footer-copyright {
+  background: #737373;
+  color: #fafafa;
+  padding-block: 20px;
+}
+.footer-copyright a {
+  color: #fafafa;
+}
+
+.sort-select {
+  width: 192px;
+}
+.show-all-products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.filters-aside {
+  min-width: 224px;
 }
