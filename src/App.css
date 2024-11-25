@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: black;
 }
 
 .App-logo {
@@ -35,4 +36,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+section {
+  background: #fafafa;
+  margin-block: 48px;
+}
+
+.hero {
+  background-image: url('./assets/pexels-karolina-grabowska-5650019.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 66%;
+  height: calc(100vh - 56px);
+}
+
+.thumb-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.thumb {
+  aspect-ratio: 1/1;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  border-radius: 50%;
+  background-size: contain;
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+}
+
+.electronics {
+  background-image: url('./assets/pexels-esmihel-18311089.png');
+}
+
+.jewelery {
+  background-image: url('./assets/pexels-zandatsu-29502933.png');
+}
+
+.men-clothing {
+  background-image: url('./assets/arrangement-different-traveling-elements.png');
+}
+
+.women-clothing {
+  background-image: url('./assets/pexels-anne-r-168988-4602025.png');
 }
