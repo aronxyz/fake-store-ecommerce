@@ -14,7 +14,7 @@ const MyFiltersAside = ({
     const [priceSort, setPriceSort] = React.useState("")
 
     return (
-        <aside className=' filters-aside'>
+        <aside className=' filters-aside d-none d-lg-block'>
             <h3>Browse by</h3>
             <ul>
                 <li><Link to={'/shop-all'}>Shop all</Link></li>
