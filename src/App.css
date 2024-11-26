@@ -1,45 +1,49 @@
 .App {
-  text-align: center;
   background: #a3a3a3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mynavbar-wrapper {
+  max-width: 1400px;
+  margin-inline: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mynavbar-links ul {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 0px !important;
+  padding-left: 0px !important;
+  list-style: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mynavbar-links ul a {
+  text-decoration: none;
+  color: #6c757d;
+}
+.mynavbar-links ul a.active {
+  color: #495057;
+  font-weight: 600;
+}
+.mynavbar-mobile-links ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 16px;
+  margin-bottom: 0px !important;
+  padding-left: 0px !important;
+  list-style: none;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.mynavbar-mobile-links ul a {
+  text-decoration: none;
+  color: #6c757d;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mynavbar-mobile-links ul a.active {
+  color: #495057;
+  font-weight: 600;
 }
 
 section {
   background: #fafafa;
+  max-width: 1400px;
+  margin-inline: auto;
   margin-block: 48px;
 }
 
@@ -57,6 +61,7 @@ section {
   justify-content: center;
   gap: 16px;
 }
+
 .thumb {
   aspect-ratio: 1/1;
   width: 320px;
@@ -68,22 +73,35 @@ section {
   display: grid;
   place-items: center;
 }
+
 .electronics {
   background-image: url('./assets/pexels-esmihel-18311089.png');
 }
+
 .jewelery {
   background-image: url('./assets/pexels-zandatsu-29502933.png');
 }
+
 .men-clothing {
   background-image: url('./assets/arrangement-different-traveling-elements.png');
 }
+
 .women-clothing {
   background-image: url('./assets/pexels-anne-r-168988-4602025.png');
 }
 
 .product-card {
   width: 240px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+.product-card:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+}
+
+
 .product-card img {
   width: auto;
   aspect-ratio: 1/1;
@@ -102,17 +120,20 @@ section {
   max-width: 576px;
   margin-inline: auto;
 }
+
 .footer-brand-wrapper {
   max-width: 992px;
   margin-inline: auto;
   border-top: 1px solid #0a0a0a;
   padding-block: 40px;
 }
+
 .footer-copyright {
   background: #737373;
   color: #fafafa;
   padding-block: 20px;
 }
+
 .footer-copyright a {
   color: #fafafa;
 }
@@ -120,7 +141,8 @@ section {
 .sort-select {
   width: 192px;
 }
-.show-all-products-wrapper {
+
+.products-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -129,4 +151,16 @@ section {
 
 .filters-aside {
   min-width: 224px;
+}
+
+.product-overview {
+  max-width: 992px;
+  margin-inline: auto;
+}
+
+.product-overview img {
+  max-width: 480px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  background: #e5e5e5;
 }

@@ -1,35 +1,32 @@
-import React from 'react'
-import { useGetAllProductsQuery } from './productsApiSlice'
-import ProductCard from './ProductCard'
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useGetAllProductsQuery } from './productsApiSlice';
+import { setProducts } from './productsSlice';
+import MyFiltersAside from '../../components/MyFiltersAside';
+import MySorterWrapper from '../../components/MySorterWrapper';
+import ProductsWrapper from './ProductsWrapper';
 
 const ShopAll = () => {
-    const { data: products, isSuccess } = useGetAllProductsQuery()
+    const dispatch = useDispatch();
+    const { data: products, isSuccess } = useGetAllProductsQuery();
+
+    useEffect(() => {
+        if (isSuccess && products) {
+            dispatch(setProducts(products));
+        }
+    }, [isSuccess, products, dispatch]);
+
     return (
-        <section className=' d-flex text-start'>
-            <aside className=' filters-aside'>
-                <h3>Browse by</h3>
-            </aside>
+        <section className='d-flex text-start'>
+            <MyFiltersAside data={products ? products : []} />
+
             <div>
-                <h1 className=' text-start'>All Products</h1>
-    
-                <div className=' d-flex justify-content-between align-items-center'>
-                    <span>{isSuccess && products.length} products</span>
-                    <select class="form-select sort-select" aria-label="Default select example">
-                        <option selected>Default</option>
-                        <option value="1">Price (low to high)</option>
-                        <option value="2">Price (high to low)</option>
-                    </select>
-                </div>
-    
-                <div className='show-all-products-wrapper'>
-                    {isSuccess && products.map((product) => (
-                        <ProductCard product={product} />
-                    ))
-                    }
-                </div>
+                <h1 className='text-start'>All Products</h1>
+                <MySorterWrapper data={products ? products : []} />
+                <ProductsWrapper data={products ? products : []} />
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default ShopAll
+export default ShopAll;
