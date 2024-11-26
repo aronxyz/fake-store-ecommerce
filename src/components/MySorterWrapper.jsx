@@ -25,7 +25,7 @@ const MySorterWrapper = ({
             </div>
             <div className=' d-flex d-lg-none justify-content-between align-items-center'>
                 <span>{data && data.length} products</span>
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filter {filterIcon}</button>
+                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filter & sort {filterIcon}</button>
             </div>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">

@@ -18,6 +18,10 @@ const MyRanger = ({ min = 1, max = 100, onChange }) => {
       }
     },
   });
+  
+  React.useEffect(() => {
+    setValues([min, max]);
+  }, [min, max]);
 
   React.useEffect(() => {
     if (typeof onChange === 'function') {
