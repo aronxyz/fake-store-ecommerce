@@ -7,39 +7,6 @@
   margin-inline: auto;
 }
 
-.mynavbar-links ul {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 0px !important;
-  padding-left: 0px !important;
-  list-style: none;
-}
-.mynavbar-links ul a {
-  text-decoration: none;
-  color: #6c757d;
-}
-.mynavbar-links ul a.active {
-  color: #495057;
-  font-weight: 600;
-}
-.mynavbar-mobile-links ul {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 0px !important;
-  padding-left: 0px !important;
-  list-style: none;
-  text-align: center;
-}
-.mynavbar-mobile-links ul a {
-  text-decoration: none;
-  color: #6c757d;
-}
-.mynavbar-mobile-links ul a.active {
-  color: #495057;
-  font-weight: 600;
-}
-
 section {
   background: #fafafa;
   max-width: 1400px;
