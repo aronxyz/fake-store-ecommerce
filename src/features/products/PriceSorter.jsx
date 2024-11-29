@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PriceSorter = ({ sortOption, onChange }) => {
+const PriceSorter = ({ onChange }) => {
     const handleChange = (event) => {
         if (onChange) {
             onChange(event.target.value);
@@ -8,50 +8,21 @@ const PriceSorter = ({ sortOption, onChange }) => {
     };
 
     return (
-        <div className="d-flex flex-column gap-2">
-            <label className="fw-bold">Sort by:</label>
-            <div className="form-check">
-                <input
-                    className="form-check-input"
-                    type="radio"
-                    name="priceSort"
-                    id="default"
-                    value=""
-                    checked={sortOption === ""}
-                    onChange={handleChange}
-                />
-                <label className="form-check-label" htmlFor="default">
+        <div className=' d-flex align-items-center gap-2'>
+            <label htmlFor="price-sorter" style={{ whiteSpace: 'nowrap' }}>
+                    Sort by:
+                </label>
+            <select
+                className="form-select sort-select"
+                aria-label="Sort by price"
+                onChange={handleChange}
+            >
+                <option value="" selected>
                     Default
-                </label>
-            </div>
-            <div className="form-check">
-                <input
-                    className="form-check-input"
-                    type="radio"
-                    name="priceSort"
-                    id="lowToHigh"
-                    value="low-to-high"
-                    checked={sortOption === "low-to-high"}
-                    onChange={handleChange}
-                />
-                <label className="form-check-label" htmlFor="lowToHigh">
-                    Price (Low to High)
-                </label>
-            </div>
-            <div className="form-check">
-                <input
-                    className="form-check-input"
-                    type="radio"
-                    name="priceSort"
-                    id="highToLow"
-                    value="high-to-low"
-                    checked={sortOption === "high-to-low"}
-                    onChange={handleChange}
-                />
-                <label className="form-check-label" htmlFor="highToLow">
-                    Price (High to Low)
-                </label>
-            </div>
+                </option>
+                <option value="low-to-high">Price (low to high)</option>
+                <option value="high-to-low">Price (high to low)</option>
+            </select>
         </div>
     );
 };
