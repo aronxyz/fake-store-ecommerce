@@ -3,7 +3,10 @@ import { apiSlice } from "../../app/api/apiSlice";
 export const productsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getAllProducts: builder.query({
-      query: () => '/products',
+      query: (query) => 
+        query === 'shop all' 
+          ? '/products' 
+          : `/products/category/${query}`,
       keepUnusedDataFor: 5,
     }),
     getProduct: builder.query({
@@ -11,7 +14,13 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     getBestSellers: builder.query({
       query: () => `/products?limit=5`,
-    })
+    }),
+    getProductsByQuery: builder.query({
+      query: (query) => 
+        query === 'shop-all' 
+          ? '/products' 
+          : `/products/category/${query}`,
+    }),
   }),
 });
 

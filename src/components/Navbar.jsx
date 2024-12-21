@@ -65,7 +65,7 @@ const Navbar = () => {
                             <a
                                 className={`nav-link ${activeLink === "Men's clothing" ? "active" : ""}`}
                                 aria-current={activeLink === "Men's clothing" ? "page" : undefined}
-                                onClick={() => handleLinkClick("Men's clothing", "/products/men-clothing")}
+                                onClick={() => handleLinkClick("Men's clothing", "/products/men's-clothing")}
                             >
                                 Men's clothing
                             </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
                             <a
                                 className={`nav-link ${activeLink === "Women's clothing" ? "active" : ""}`}
                                 aria-current={activeLink === "Women's clothing" ? "page" : undefined}
-                                onClick={() => handleLinkClick("Women's clothing", "/products/women-clothing")}
+                                onClick={() => handleLinkClick("Women's clothing", "/products/women's-clothing")}
                             >
                                 Women's clothing
                             </a>
@@ -87,9 +87,6 @@ const Navbar = () => {
                 <div className=' container-fluid'>
                     <span
                         aria-current={activeLink === "Home" ? "page" : undefined}
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
                         onClick={() => handleLinkClick("Home", "/")}>{navbarBrand}</span>
                     <div className=' d-flex align-items-center gap-3'>
                         <span>{cartShoppingIcon}</span>

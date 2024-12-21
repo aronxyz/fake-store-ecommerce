@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { sortProducts } from './productsSlice';
 
-const PriceSorter = ({ onChange }) => {
-    const handleChange = (event) => {
-        if (onChange) {
-            onChange(event.target.value);
-        }
-    };
+const PriceSorter = () => {
+
+    const dispatch = useDispatch()
+
+    const handleSelectChange = (event) => {
+        dispatch(sortProducts({
+            order: event.target.value
+        }))
+    }
 
     return (
-        <div className=' d-flex align-items-center gap-2'>
+        <div className=' d-none d-lg-flex align-items-center gap-2'>
             <label htmlFor="price-sorter" style={{ whiteSpace: 'nowrap' }}>
-                    Sort by:
-                </label>
+                Sort by:
+            </label>
             <select
                 className="form-select sort-select"
                 aria-label="Sort by price"
-                onChange={handleChange}
+                onChange={handleSelectChange}
             >
                 <option value="" selected>
-                    Default
+                    Default (rating)
                 </option>
-                <option value="low-to-high">Price (low to high)</option>
-                <option value="high-to-low">Price (high to low)</option>
+                <option value="asc">Price (low to high)</option>
+                <option value="desc">Price (high to low)</option>
             </select>
         </div>
-    );
-};
+    )
+}
 
 export default PriceSorter;

@@ -1,8 +1,16 @@
 import React, { useRef, useState, useEffect, useImperativeHandle } from 'react';
 import { useRanger } from '@tanstack/react-ranger';
+import { useSelector, useDispatch } from 'react-redux';
+import { resetPriceRangeFilter, setPriceRangeFilter } from './productsSlice';
 
-const PriceRanger = React.forwardRef(({ min = 1, max = 100, onChange }, ref) => {
+const PriceRanger = React.forwardRef(({ }, ref) => {
+
+    const dispatch = useDispatch()
     const rangerRef = useRef(null);
+
+    const min = useSelector((state) => state.products.minPrice)
+    const max = useSelector((state) => state.products.maxPrice)
+
     const [values, setValues] = useState([min, max]);
 
     const rangerInstance = useRanger({
@@ -13,9 +21,10 @@ const PriceRanger = React.forwardRef(({ min = 1, max = 100, onChange }, ref) => 
         stepSize: 1,
         onChange: (instance) => {
             setValues(instance.sortedValues);
-            if (typeof onChange === 'function') {
-                onChange(instance.sortedValues);
-            }
+            dispatch(setPriceRangeFilter({
+                min: instance.sortedValues[0],
+                max: instance.sortedValues[1],
+            }))
         },
     });
 
@@ -25,6 +34,7 @@ const PriceRanger = React.forwardRef(({ min = 1, max = 100, onChange }, ref) => 
 
     const resetValues = () => {
         setValues([min, max]);
+        dispatch(resetPriceRangeFilter())
     };
 
     // Expose resetValues to parent component via ref

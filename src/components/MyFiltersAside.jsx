@@ -3,7 +3,7 @@ import PriceRanger from '../features/products/PriceRanger';
 import { Link } from 'react-router-dom';
 
 // Forward the ref to the PriceRanger component
-const MyFiltersAside = React.forwardRef(({ setPriceRange, minPrice, maxPrice, }, ref) => {
+const MyFiltersAside = React.forwardRef(({ }, ref) => {
     return (
         <aside className='filters-aside d-none d-lg-block'>
             <h3>Browse by</h3>
@@ -15,11 +15,7 @@ const MyFiltersAside = React.forwardRef(({ setPriceRange, minPrice, maxPrice, },
                 <li><Link to={'/women-clothing'}>Women's clothing</Link></li>
             </ul>
             <h3>Filter by</h3>
-            <PriceRanger
-                ref={ref}  // Pass ref to PriceRanger
-                min={minPrice} max={maxPrice}
-                onChange={setPriceRange}
-            />
+            <PriceRanger ref={ref} />
         </aside>
     );
 });
