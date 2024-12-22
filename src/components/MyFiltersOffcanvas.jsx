@@ -14,7 +14,9 @@ const MyFiltersOffcanvas = () => {
   const borderStyles = '1px solid #dee2e6';
 
   const priceRange = useSelector((state) => state.products.priceRange);
+  const products = useSelector((state) => state.products.products)
   const filteredProducts = useSelector((state) => state.products.filteredProducts);
+  const displayProducts = filteredProducts.length > 0 ? filteredProducts : products;
 
   const mobilePriceRangerRef = useRef();
 
@@ -67,7 +69,7 @@ const MyFiltersOffcanvas = () => {
         style={{ borderBottom: borderStyles }}
       >
         <h5 className="offcanvas-title" id="offcanvasRightLabel">
-          Filter & sort ({filteredProducts.length} products)
+          Filter & sort ({displayProducts.length} products)
         </h5>
         <button
           type="button"

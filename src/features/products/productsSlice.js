@@ -69,6 +69,9 @@ const productsSlice = createSlice({
       state.filteredProducts = [...state.products].sort((a, b) => b.rating.rate - a.rating.rate);
       state.isSorted = false;
     },
+    resetState() {
+      return initialState; // Reset state to its initial values
+    },
   },
 });
 
@@ -78,6 +81,7 @@ export const {
   resetPriceRangeFilter,
   sortProducts,
   resetSort,
+  resetState
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

@@ -11,7 +11,7 @@ const ProductsWrapper = () => {
     const displayProducts = filteredProducts.length > 0 ? filteredProducts : products;
 
     return (
-        <div className='products-wrapper'>
+        <div className=' products-wrapper mt-3'>
             {displayProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
             ))}

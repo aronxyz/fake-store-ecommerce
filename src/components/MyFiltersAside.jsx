@@ -1,21 +1,63 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import PriceRanger from '../features/products/PriceRanger';
-import { Link } from 'react-router-dom';
 
-// Forward the ref to the PriceRanger component
 const MyFiltersAside = React.forwardRef(({ }, ref) => {
+    const location = useLocation();
+
+    const isActive = (path) => location.pathname === path;
+
     return (
-        <aside className='filters-aside d-none d-lg-block'>
-            <h3>Browse by</h3>
-            <ul>
-                <li><Link to={'/shop-all'}>Shop all</Link></li>
-                <li><Link to={'/electronincs'}>Electronincs</Link></li>
-                <li><Link to={'/jewelery'}>Jewelery</Link></li>
-                <li><Link to={'/men-clothing'}>Men's clothing</Link></li>
-                <li><Link to={'/women-clothing'}>Women's clothing</Link></li>
-            </ul>
-            <h3>Filter by</h3>
-            <PriceRanger ref={ref} />
+        <aside className="filters-aside d-none d-lg-block">
+            <div>
+                <h3>Browse by</h3>
+                <ul className=" nav nav-pills flex-column">
+                    <li className="nav-item">
+                        <Link
+                            className={`nav-link ${isActive('/products/shop-all') ? 'active' : ''}`}
+                            to="/products/shop-all"
+                        >
+                            Shop all
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link
+                            className={`nav-link ${isActive('/products/electronics') ? 'active' : ''}`}
+                            to="/products/electronics"
+                        >
+                            Electronics
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link
+                            className={`nav-link ${isActive('/products/jewelery') ? 'active' : ''}`}
+                            to="/products/jewelery"
+                        >
+                            Jewelery
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link
+                            className={`nav-link ${isActive("/products/men's-clothing") ? 'active' : ''}`}
+                            to="/products/men's-clothing"
+                        >
+                            Men's clothing
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link
+                            className={`nav-link ${isActive("/products/women's-clothing") ? 'active' : ''}`}
+                            to="/products/women's-clothing"
+                        >
+                            Women's clothing
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+            <div className=' mt-3'>
+                <h3>Filter by</h3>
+                <PriceRanger ref={ref} />
+            </div>
         </aside>
     );
 });

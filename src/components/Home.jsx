@@ -2,6 +2,7 @@ import React from 'react'
 import { useGetAllProductsQuery } from '../features/products/productsApiSlice'
 import { useGetAllCategoriesQuery } from '../features/categories/categoriesApiSlice'
 import BestSellers from '../features/products/BestSellers'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -31,20 +32,30 @@ const Home = () => {
             </div>
             <section>
                 <h3>Shop by Category</h3>
-                <div className=' thumb-wrapper'>
-                    <div className=' electronics thumb'>
-                        <button className=' btn btn-secondary'>Electronics</button>
+
+                <div className="thumb-wrapper">
+                    <div className="electronics thumb">
+                        <Link to="/products/electronics" className="btn btn-secondary">
+                            Electronics
+                        </Link>
                     </div>
-                    <div className=' jewelery thumb'>
-                        <button className=' btn btn-secondary'>Jewelery</button>
+                    <div className="jewelery thumb">
+                        <Link to="/products/jewelery" className="btn btn-secondary">
+                            Jewelery
+                        </Link>
                     </div>
-                    <div className=' men-clothing thumb'>
-                        <button className=' btn btn-secondary'>Men's clothing</button>
+                    <div className="men-clothing thumb">
+                        <Link to="/products/men's-clothing" className="btn btn-secondary">
+                            Men's clothing
+                        </Link>
                     </div>
-                    <div className=' women-clothing thumb'>
-                        <button className=' btn btn-secondary'>Women's clothing</button>
+                    <div className="women-clothing thumb">
+                        <Link to="/products/women's-clothing" className="btn btn-secondary">
+                            Women's clothing
+                        </Link>
                     </div>
                 </div>
+
             </section>
             <section>
                 <h3>Best Sellers</h3>

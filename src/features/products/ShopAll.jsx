@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useGetAllProductsQuery } from './productsApiSlice';
-import { resetPriceRangeFilter, setProducts } from './productsSlice';
+import { resetPriceRangeFilter, resetSort, resetState, setProducts } from './productsSlice';
 import MyFiltersAside from '../../components/MyFiltersAside';
 import ProductsWrapper from './ProductsWrapper';
 import MyToolbar from '../../components/MyToolbar';
@@ -23,7 +23,15 @@ const ShopAll = () => {
         if (isSuccess && products) {
             dispatch(setProducts(products));
         }
-    }, [isSuccess, products, dispatch]);
+    }, [isSuccess, products, category, dispatch]);
+
+    // Reset sort and filter when the category changes
+    useEffect(() => {
+        if (priceRangerRef.current) {
+            priceRangerRef.current.resetValues();
+        }
+        dispatch(resetState());;
+    }, [category, dispatch]);
 
     // Reset the price range filter
     const handlePriceRangeReset = () => {

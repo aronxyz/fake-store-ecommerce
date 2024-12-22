@@ -13,7 +13,6 @@ const MyToolbar = ({
     const isFiltered = useSelector((state) => state.products.isFiltered)
     const products = useSelector((state) => state.products.products)
     const filteredProducts = useSelector((state) => state.products.filteredProducts)
-    
     const displayProducts = filteredProducts.length > 0 ? filteredProducts : products;
 
     return (
@@ -31,11 +30,17 @@ const MyToolbar = ({
             </div>
 
             {/* Mobile */}
-            <div className=' d-flex d-lg-none justify-content-between align-items-center'>
-                <span>{displayProducts.length} products</span>
-                <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filter & sort</button>
+            <div className=' d-block d-lg-none'>
+                {isFiltered
+                    ? <span className=' bg-body-secondary px-2 py-1'>{priceRange.min}€-{priceRange.max}€ <span onClick={handlePriceRangeReset} className=' ms-2' style={{ cursor: 'pointer' }} aria-hidden="true">&times;</span></span>
+                    : null
+                }
+                <div className=' d-flex d-lg-none justify-content-between align-items-center'>
+                    <span>{displayProducts.length} products</span>
+                    <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filter & sort</button>
+                </div>
+                <MyFiltersOffcanvas />
             </div>
-            <MyFiltersOffcanvas />
         </>
     )
 }
