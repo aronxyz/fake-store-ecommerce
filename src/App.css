@@ -84,10 +84,14 @@ section h3 {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.product-card:hover {
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
-  transform: translateY(-10px);
+@media (min-width: 992px) {
+  /* Your CSS styles for lg and larger screens */
+  .product-card:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    transform: translateY(-10px);
+  }
 }
+
 
 .product-card img {
   width: auto;
@@ -188,12 +192,6 @@ footer {
   width: 238px !important;
 }
 
-.swiper-slide:last-child {
-  padding-right: 1px;
-}
-
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
-  pointer-events: initial !important;
-  cursor: not-allowed !important;
+.mySwiper {
+  padding-right: 8px !important;
 }

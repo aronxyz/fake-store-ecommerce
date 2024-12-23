@@ -8,9 +8,9 @@ const ProductOverview = () => {
   const { id } = useParams();
   const location = useLocation(); // Get the current location
   const { data: product, isFetching } = useGetProductQuery(id);
-  
+
   return (
-    <>
+    <div key={location.pathname}>
       <section>
         {isFetching ? (
           <div
@@ -43,11 +43,7 @@ const ProductOverview = () => {
           </div>
         )}
       </section>
-      <section>
-        <h3>You May Also Like</h3>
-        <BestSellers />
-      </section>
-    </>
+    </div>
   );
 };
 

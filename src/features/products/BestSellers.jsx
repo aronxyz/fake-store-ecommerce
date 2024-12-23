@@ -2,10 +2,7 @@ import React from 'react'
 import { useGetBestSellersQuery } from './productsApiSlice'
 import ProductCard from './ProductCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-
 
 const BestSellers = () => {
     const { data: bestSellers, isFetching } = useGetBestSellersQuery()
@@ -22,7 +19,6 @@ const BestSellers = () => {
                 <Swiper
                     slidesPerView="auto"
                     spaceBetween={30}
-                    navigation={true} modules={[Navigation]}
                     className="mySwiper"
                 >
                     {bestSellers?.map((bestSeller) => (
