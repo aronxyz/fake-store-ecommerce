@@ -17,11 +17,20 @@
 section {
   background: #fafafa;
   max-width: 1400px;
-  margin-inline: auto;
+  margin-inline: 10px;
   margin-block: 48px;
   padding-block: 40px;
   padding-inline: 20px;
 }
+
+@media (min-width: 992px) {
+
+  /* Your CSS styles for lg and larger screens */
+  section {
+    margin-inline: auto;
+  }
+}
+
 section h3 {
   margin-bottom: 20px;
 }
@@ -40,6 +49,7 @@ section h3 {
   justify-content: center;
   gap: 16px;
 }
+
 .thumb {
   aspect-ratio: 1/1;
   width: 320px;
@@ -51,15 +61,19 @@ section h3 {
   display: grid;
   place-items: center;
 }
+
 .electronics {
   background-image: url('./assets/pexels-esmihel-18311089.png');
 }
+
 .jewelery {
   background-image: url('./assets/pexels-zandatsu-29502933.png');
 }
+
 .men-clothing {
   background-image: url('./assets/arrangement-different-traveling-elements.png');
 }
+
 .women-clothing {
   background-image: url('./assets/pexels-anne-r-168988-4602025.png');
 }
@@ -69,10 +83,12 @@ section h3 {
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
 .product-card:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
   transform: translateY(-10px);
 }
+
 .product-card img {
   width: auto;
   aspect-ratio: 1/1;
@@ -91,25 +107,30 @@ section h3 {
 footer {
   background: #e5e5e5;
 }
+
 .footer-body {
   max-width: 576px;
   margin-inline: auto;
   padding-block: 48px;
   gap: 40px;
 }
+
 .footer-body h3 {
   margin-bottom: 20px;
   font-size: larger;
 }
+
 .footer-body p {
   margin-bottom: 8px;
 }
+
 .footer-copyright {
   background: #737373;
   color: #fafafa;
   padding-block: 20px;
   text-align: center;
 }
+
 .footer-copyright a {
   color: #fafafa;
 }
@@ -129,22 +150,27 @@ footer {
   min-width: 224px;
   padding-right: 20px;
 }
+
 .filters-aside h3 {
   font-size: larger;
   padding-bottom: 8px;
   border-bottom: 1px solid #dee2e6;
 }
+
 .product-overview {
   max-width: 992px;
   margin-inline: 20px;
   margin-block: 48px;
 }
+
 @media (min-width: 992px) {
+
   /* Your CSS styles for lg and larger screens */
-  .product-overview  {
+  .product-overview {
     margin-inline: auto;
   }
 }
+
 .product-overview img {
   max-width: 480px;
   object-fit: contain;
@@ -162,7 +188,12 @@ footer {
   width: 238px !important;
 }
 
-.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+.swiper-slide:last-child {
+  padding-right: 1px;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
   pointer-events: initial !important;
   cursor: not-allowed !important;
 }

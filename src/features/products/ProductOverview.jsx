@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useGetBestSellersQuery, useGetProductQuery } from './productsApiSlice';
+import { useGetProductQuery } from './productsApiSlice';
 import { useParams, useLocation } from 'react-router-dom';
 import MyRating from '../../components/MyRating';
 import BestSellers from './BestSellers';
@@ -8,13 +8,7 @@ const ProductOverview = () => {
   const { id } = useParams();
   const location = useLocation(); // Get the current location
   const { data: product, isFetching } = useGetProductQuery(id);
-  const { data: bestSellers, isFetching: isFetchingBestSellers } = useGetBestSellersQuery();
-
-  useEffect(() => {
-    // Scroll to the top of the page whenever the location changes
-    window.scrollTo(0, 0);
-  }, [location]);
-
+  
   return (
     <>
       <section>

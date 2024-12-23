@@ -5,11 +5,13 @@ import Navbar from './components/Navbar';
 import MyFooter from './components/MyFooter';
 import ShopAll from './features/products/ShopAll';
 import ProductOverview from './features/products/ProductOverview';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
-  
+
   return (
     <div className="App">
+      <ScrollToTop />
       <Navbar />
       <div className=' main-content'>
         <Routes>
