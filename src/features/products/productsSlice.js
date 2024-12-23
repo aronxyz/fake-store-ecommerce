@@ -65,8 +65,6 @@ const productsSlice = createSlice({
       }
     },
     resetSort(state) {
-      // Restore the default sorting by rating.rate
-      state.filteredProducts = [...state.products].sort((a, b) => b.rating.rate - a.rating.rate);
       state.isSorted = false;
     },
     resetState() {

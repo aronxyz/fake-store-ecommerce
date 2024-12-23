@@ -30,7 +30,8 @@ const ShopAll = () => {
         if (priceRangerRef.current) {
             priceRangerRef.current.resetValues();
         }
-        dispatch(resetState());;
+        dispatch(resetPriceRangeFilter())
+        dispatch(resetSort())
     }, [category, dispatch]);
 
     // Reset the price range filter
@@ -66,10 +67,6 @@ const ShopAll = () => {
             <MyFiltersAside ref={priceRangerRef} />
             <div className=' flex-grow-1'>
                 <h1 className='text-start'>{title}</h1>
-                <MyToolbar
-                    ref={priceRangerRef}
-                    handlePriceRangeReset={handlePriceRangeReset}
-                />
                 {isFetching ? (
                     <div className=' w-100 text-center'>
                         <div class="spinner-border" role="status">
@@ -77,7 +74,13 @@ const ShopAll = () => {
                         </div>
                     </div>
                 ) : (
-                    <ProductsWrapper />
+                    <>
+                        <MyToolbar
+                            ref={priceRangerRef}
+                            handlePriceRangeReset={handlePriceRangeReset}
+                        />
+                        <ProductsWrapper />
+                    </>
                 )}
             </div>
         </section>

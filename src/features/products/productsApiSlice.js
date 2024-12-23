@@ -13,7 +13,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
       query: (id) => `/products/${id}`,
     }),
     getBestSellers: builder.query({
-      query: () => `/products?limit=5`,
+      query: () => `/products?limit=6`,
     }),
     getProductsByQuery: builder.query({
       query: (query) => 

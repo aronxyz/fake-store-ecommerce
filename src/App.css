@@ -1,5 +1,12 @@
 .App {
   background: #a3a3a3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
 }
 
 .mynavbar-wrapper {
@@ -73,6 +80,7 @@ section h3 {
   background: #e5e5e5;
 }
 
+
 .best-sellers-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -126,14 +134,35 @@ footer {
   padding-bottom: 8px;
   border-bottom: 1px solid #dee2e6;
 }
-
 .product-overview {
   max-width: 992px;
-  margin-inline: auto;
+  margin-inline: 20px;
+  margin-block: 48px;
+}
+@media (min-width: 992px) {
+  /* Your CSS styles for lg and larger screens */
+  .product-overview  {
+    margin-inline: auto;
+  }
 }
 .product-overview img {
   max-width: 480px;
   object-fit: contain;
   aspect-ratio: 1/1;
-  background: #e5e5e5;
+  /* background: #e5e5e5; */
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  margin-block: 10px;
+  width: 238px !important;
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+  pointer-events: initial !important;
+  cursor: not-allowed !important;
 }
