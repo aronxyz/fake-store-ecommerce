@@ -67,21 +67,14 @@ const ShopAll = () => {
             <MyFiltersAside ref={priceRangerRef} />
             <div className=' flex-grow-1'>
                 <h1 className='text-start'>{title}</h1>
-                {isFetching ? (
-                    <div className=' w-100 text-center'>
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                ) : (
-                    <>
-                        <MyToolbar
-                            ref={priceRangerRef}
-                            handlePriceRangeReset={handlePriceRangeReset}
-                        />
-                        <ProductsWrapper />
-                    </>
-                )}
+                <div className=' position-relative'>
+                    <MyToolbar
+                        ref={priceRangerRef}
+                        handlePriceRangeReset={handlePriceRangeReset}
+                    />
+                    <ProductsWrapper />
+                    <div className={` test ${isFetching ? 'd-block' : 'd-none'}`}></div>
+                </div>
             </div>
         </section>
     );

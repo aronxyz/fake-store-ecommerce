@@ -28,13 +28,15 @@ const ProductCard = ({
         navigate(`/product/${product.id}`)
     }
 
+    const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
     return (
-        <div onClick={handleCLick} className=' card product-card'>
-            <img className=' card-img-top' src={product.image} class="card-img-top" alt="..."></img>
-            <div className=' card-body'>
-                <h5 className=' card-title' style={cardTitleStyles}>{product.title}</h5>
-                <p className=' card-text text-body-secondary' style={cardTextStyles}>{product.description}</p>
-                <span className=' fs-3'>{product.price}€</span>
+        <div onClick={handleCLick} className=' product-card'>
+            <img className=' ' src={product.image} alt="..."></img>
+            <div className=' '>
+                <span className=' fw-semibold' style={cardTitleStyles}>{product.title}</span>
+                <span className=' ' style={cardTitleStyles}>{capitalizeFirstLetter(product.category)}</span>
+                <span className=' fw-semibold'>{product.price}€</span>
                 <MyRating rating={product.rating} />
             </div>
         </div>

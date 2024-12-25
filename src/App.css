@@ -1,5 +1,5 @@
 .App {
-  background: #a3a3a3;
+  background: #f5f5f5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,20 +15,10 @@
 }
 
 section {
-  background: #fafafa;
   max-width: 1400px;
-  margin-inline: 10px;
+  padding-inline: 10px;
+  margin-inline: auto;
   margin-block: 48px;
-  padding-block: 40px;
-  padding-inline: 20px;
-}
-
-@media (min-width: 992px) {
-
-  /* Your CSS styles for lg and larger screens */
-  section {
-    margin-inline: auto;
-  }
 }
 
 section h3 {
@@ -43,23 +33,15 @@ section h3 {
   height: calc(100vh - 56px);
 }
 
-.thumb-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-}
-
 .thumb {
   aspect-ratio: 1/1;
-  width: 320px;
-  min-width: 320px;
-  max-width: 320px;
-  border-radius: 50%;
   background-size: contain;
+  background-repeat: no-repeat;
   flex-grow: 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  padding: 20px;
 }
 
 .electronics {
@@ -79,25 +61,15 @@ section h3 {
 }
 
 .product-card {
-  width: 240px;
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-@media (min-width: 992px) {
-  /* Your CSS styles for lg and larger screens */
-  .product-card:hover {
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
-    transform: translateY(-10px);
-  }
-}
-
-
 .product-card img {
-  width: auto;
+  width: 100%;
   aspect-ratio: 1/1;
   object-fit: contain;
-  background: #e5e5e5;
+  background: #fff;
 }
 
 
@@ -143,13 +115,6 @@ footer {
   width: 192px;
 }
 
-.products-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-}
-
 .filters-aside {
   min-width: 224px;
   padding-right: 20px;
@@ -158,12 +123,11 @@ footer {
 .filters-aside h3 {
   font-size: larger;
   padding-bottom: 8px;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid rgb(163, 163, 163);
 }
 
 .product-overview {
   max-width: 992px;
-  margin-inline: 20px;
   margin-block: 48px;
 }
 
@@ -179,7 +143,6 @@ footer {
   max-width: 480px;
   object-fit: contain;
   aspect-ratio: 1/1;
-  /* background: #e5e5e5; */
 }
 
 .swiper {
@@ -189,9 +152,62 @@ footer {
 
 .swiper-slide {
   margin-block: 10px;
-  width: 238px !important;
+  width: 27% !important;
 }
 
 .mySwiper {
   padding-right: 8px !important;
 }
+
+.test {
+  background-color: rgba(245, 245, 245, 0.7);
+  position: absolute;
+  inset: 0;
+}
+
+.bag-item {
+  border-bottom: 1px solid rgb(163, 163, 163);
+  padding-block: 12px;
+}
+
+
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

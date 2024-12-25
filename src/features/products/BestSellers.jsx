@@ -3,6 +3,7 @@ import { useGetBestSellersQuery } from './productsApiSlice'
 import ProductCard from './ProductCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import MyLoader from '../../components/MyLoader';
 
 const BestSellers = () => {
     const { data: bestSellers, isFetching } = useGetBestSellersQuery()
@@ -10,11 +11,7 @@ const BestSellers = () => {
     return (
         <div className=' best-sellers-wrapper'>
             {isFetching ? (
-                <div className="w-100 text-center">
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-                </div>
+                <MyLoader />
             ) : (
                 <Swiper
                     slidesPerView="auto"

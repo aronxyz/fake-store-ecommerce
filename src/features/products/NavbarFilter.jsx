@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NavbarFilter = () => {
 
-    const { data, isSuccess } = useGetAllProductsQuery()
+    const { data, isSuccess } = useGetAllProductsQuery("shop all")
     const titles = isSuccess ? data.map((product) => product.title) : [];
     const [filter, setFilter] = useState("")
     const navigate = useNavigate()

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import MyFooter from './components/MyFooter';
 import ShopAll from './features/products/ShopAll';
 import ProductOverview from './features/products/ProductOverview';
+import Bag from './features/bag/Bag';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductOverview />} />
           <Route path='/products/:category' element={<ShopAll />} />
+          <Route path='/bag' element={<Bag />} />
         </Routes>
       </div>
       <MyFooter />

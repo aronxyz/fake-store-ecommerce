@@ -1,27 +1,17 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavbarFilter from '../features/products/NavbarFilter';
+import BagButton from '../features/bag/BagButton';
 
 const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
     const navbarBrand = <img src={require('../assets/brand.png')} alt="Brand" />;
+
     const cartShoppingIcon = (
-        <svg
-            width="23"
-            height="23"
-            viewBox="0 0 23 23"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                d="M4.95438 3.9002H21.288L19.0657 11.678H6.15098M20.1769 16.1224H6.84352L4.6213 1.67798H1.28796M7.95463 20.5669C7.95463 21.1805 7.45716 21.678 6.84352 21.678C6.22988 21.678 5.73241 21.1805 5.73241 20.5669C5.73241 19.9532 6.22988 19.4558 6.84352 19.4558C7.45716 19.4558 7.95463 19.9532 7.95463 20.5669ZM20.1769 20.5669C20.1769 21.1805 19.6794 21.678 19.0657 21.678C18.4521 21.678 17.9546 21.1805 17.9546 20.5669C17.9546 19.9532 18.4521 19.4558 19.0657 19.4558C19.6794 19.4558 20.1769 19.9532 20.1769 20.5669Z"
-                stroke="black"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
         </svg>
     );
 
@@ -38,12 +28,12 @@ const Navbar = () => {
     return (
         <>
             {/* Desktop */}
-            <nav className="bg-body-tertiary navbar-expand d-none d-lg-block">
+            <nav className=" bg-white navbar-expand d-none d-lg-block" style={{ paddingInline: 10 }}>
                 <div className="mynavbar-wrapper">
                     <div className="d-flex align-items-center justify-content-between pt-2">
                         <span onClick={() => navigate('/')}>{navbarBrand}</span>
                         <NavbarFilter />
-                        <span>{cartShoppingIcon}</span>
+                        <BagButton />
                     </div>
                     <ul className="nav nav-underline">
                         {navLinks.map(({ label, path }) => (
@@ -61,7 +51,7 @@ const Navbar = () => {
                 </div>
             </nav>
             {/* Mobile */}
-            <nav className="bg-body-tertiary navbar d-block d-lg-none">
+            <nav className="bg-white navbar d-block d-lg-none">
                 <div className="container-fluid">
                     <span
                         aria-current={isActive('/') ? 'page' : undefined}
@@ -70,7 +60,7 @@ const Navbar = () => {
                         {navbarBrand}
                     </span>
                     <div className="d-flex align-items-center gap-3">
-                        <span>{cartShoppingIcon}</span>
+                        <BagButton />
                         <button
                             className="navbar-toggler"
                             type="button"

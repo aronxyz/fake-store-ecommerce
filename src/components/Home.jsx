@@ -2,6 +2,7 @@ import React from 'react'
 import { useGetAllProductsQuery } from '../features/products/productsApiSlice'
 import BestSellers from '../features/products/BestSellers'
 import { Link } from 'react-router-dom'
+import ShopByCategory from '../features/products/ShopByCategory'
 
 const Home = () => {
 
@@ -30,30 +31,7 @@ const Home = () => {
             </div>
             <section>
                 <h3>Shop by Category</h3>
-
-                <div className="thumb-wrapper">
-                    <div className="electronics thumb">
-                        <Link to="/products/electronics" className="btn btn-secondary">
-                            Electronics
-                        </Link>
-                    </div>
-                    <div className="jewelery thumb">
-                        <Link to="/products/jewelery" className="btn btn-secondary">
-                            Jewelery
-                        </Link>
-                    </div>
-                    <div className="men-clothing thumb">
-                        <Link to="/products/men's-clothing" className="btn btn-secondary">
-                            Men's clothing
-                        </Link>
-                    </div>
-                    <div className="women-clothing thumb">
-                        <Link to="/products/women's-clothing" className="btn btn-secondary">
-                            Women's clothing
-                        </Link>
-                    </div>
-                </div>
-
+                <ShopByCategory />
             </section>
             <section>
                 <h3>Best Sellers</h3>
