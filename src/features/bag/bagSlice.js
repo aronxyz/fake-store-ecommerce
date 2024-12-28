@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     items: [],
     total: 0
-}
+};
 
 const bagSlice = createSlice({
     name: 'bag',
@@ -12,11 +12,12 @@ const bagSlice = createSlice({
         addItem(state, action) {
             let item = state.items.find(extra => extra.id === action.payload.id);
             if (!item) {
-                item = { ...action.payload, quantity: 1 };
+                item = { ...action.payload, quantity: 1, amount: action.payload.price };
                 state.items.push(item);
                 state.total += item.price;
             } else {
                 item.quantity += 1;
+                item.amount += item.price;
                 state.total += item.price;
             }
         },
@@ -24,13 +25,14 @@ const bagSlice = createSlice({
             let item = state.items.find(extra => extra.id === action.payload.id);
             if (item) {
                 state.items = state.items.filter(extra => extra.id !== action.payload.id);
-                state.total -= (item.price * item.quantity);
+                state.total -= item.amount; 
             }
         },
         increaseQuantity(state, action) {
             let item = state.items.find(extra => extra.id === action.payload.id);
             if (item) {
                 item.quantity += 1;
+                item.amount += item.price;
                 state.total += item.price;
             }
         },
@@ -39,6 +41,7 @@ const bagSlice = createSlice({
             if (item) {
                 if (item.quantity > 1) {
                     item.quantity -= 1;
+                    item.amount -= item.price;
                     state.total -= item.price;
                 } else {
                     state.items = state.items.filter(extra => extra.id !== action.payload.id);

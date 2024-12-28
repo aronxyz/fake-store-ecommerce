@@ -2,7 +2,6 @@ import { useGetProductQuery } from './productsApiSlice';
 import { useParams } from 'react-router-dom';
 import MyRating from '../../components/MyRating';
 import { AddToBagButton } from '../bag/AddToBagButton';
-import MyLoader from '../../components/MyLoader';
 
 const ProductOverview = () => {
   const { id } = useParams();
@@ -11,7 +10,7 @@ const ProductOverview = () => {
   return (
     <section>
       {isFetching ? (
-        <MyLoader />
+        ""
       ) : (
         <div className="product-overview">
           <div className="row">

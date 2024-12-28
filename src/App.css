@@ -152,8 +152,43 @@ footer {
 
 .swiper-slide {
   margin-block: 10px;
-  width: 27% !important;
 }
+
+/* Extra Small Devices (up to 575px) */
+@media (max-width: 575px) {
+  .swiper-slide {
+    width: 75% !important;
+  }
+}
+
+/* Small Devices (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .swiper-slide {
+    width: 75% !important;
+  }
+}
+
+/* Medium Devices (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .swiper-slide {
+    width: 65% !important;
+  }
+}
+
+/* Large Devices (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .swiper-slide {
+    width: 45% !important;
+  }
+}
+
+/* Extra Large Devices (1200px and above) */
+@media (min-width: 1200px) {
+  .swiper-slide {
+    width: 35% !important;
+  }
+}
+
 
 .mySwiper {
   padding-right: 8px !important;

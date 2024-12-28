@@ -26,7 +26,7 @@ const BagItem = ({
             {item.title}
           </span>
           <span>{capitalizeFirstLetter(item.category)}</span>
-          <span className=" fw-semibold">{item.price}€</span>
+          <span className=" fw-semibold">{item.amount}€</span>
         </div>
         <div className=' mt-1'>
           <ItemQuantitySelector parentRef={item} />
